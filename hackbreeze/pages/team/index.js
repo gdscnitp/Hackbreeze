@@ -1,7 +1,7 @@
 import React from "react";
-import TeamBox from "../components/Team/TeamBox";
+import TeamBox from "../../components/Team/TeamBox";
 import Image from "next/image";
-import Member from "../components/Team/Member";
+import Member from "../../components/Team/Member";
 
 const TeamPage = () => {
   return (
