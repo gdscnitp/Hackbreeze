@@ -1,10 +1,10 @@
 import React from 'react'
-import Form from '../components/Form'
+import ResForm from '../components/ResForm'
 
 function FormD() {
   return (
-    <div><Form/></div>
+    <div><ResForm/></div>
   )
 }
 
-export default Form
+export default FormD

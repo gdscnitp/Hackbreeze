@@ -1,7 +1,22 @@
+// import Providers from 'next-auth/providers';
+
+// const options = {
+//   providers: [
+//     Providers.Google({
+//       clientId: 'YOUR_GOOGLE_CLIENT_ID',
+//       clientSecret: 'YOUR_GOOGLE_CLIENT_SECRET',
+//     }),
+//     // Add more providers here if needed
+//   ],
+//   // Add additional options as needed
+// };
+
+// export default options;
+
 import NextAuth from 'next-auth';
 import Providers from 'next-auth/providers';
 
-export default NextAuth({
+const options = {
   providers: [
     Providers.Credentials({
       name: 'Email',
@@ -24,4 +39,7 @@ export default NextAuth({
     }),
   ],
   // Add other options as needed
-});
+};
+
+export default NextAuth(options);
+

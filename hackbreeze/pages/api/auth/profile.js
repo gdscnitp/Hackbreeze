@@ -1,16 +1,32 @@
-import { authOptions } from "./[...nextauth]";
+import React from 'react';
+import { useRouter } from 'next/router';
+import { useSession } from 'next-auth/client';
 
-export default async function handler(req, res) {
-  const { email, name, bio } = req.body;
+const ProfilePage = () => {
+  const router = useRouter();
+  const [session, loading] = useSession();
 
-  try {
-    // Implement edit profile logic here
-    // Update user in the database or perform other necessary actions
+  useEffect(() => {
+    if (!session && !loading) {
+      router.push('/signin'); // Redirect to sign-in page if the user is not authenticated
+    }
+  }, [session, loading, router]);
 
-    res.status(200).json({ message: 'Profile updated successfully' });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'An error occurred' });
+  if (loading) {
+    return <p>Loading...</p>;
   }
-}
 
+  if (!session) {
+    return null; // Render nothing if the user is not authenticated
+  }
+
+  return (
+    <div>
+      <h1>Profile</h1>
+      <p>Welcome, {session.user.email}!</p>
+      {/* Add profile editing form here */}
+    </div>
+  );
+};
+
+export default ProfilePage;
