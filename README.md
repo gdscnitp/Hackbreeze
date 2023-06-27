@@ -1,13 +1,18 @@
 # Hackbreeze(A COLLABORATIVE TOOL FOR DEVELOPERS)
 # BY WEB TEAM - GDSC
 
-# Work
-# • TO ENHANCE COLLABORATIVE CODING AND HELP THEM FIND CODING PARTNERS
-# • TO KEEP A TRACK OF ONE’S PROGRESS ACROSS VARIOUS DOMAINS OF PROGRAMMING AND DEVELOPMENT.
+# Functions:-
+• to enhance collaborative coding and helps in finding a coding Partner
 
-# • BUILD A PLATFORM WHICH TRACKS ALL THE UPCOMING CONTESTS AND HACKATHONS
-# • USERS WILL BE NOTIFIED FOR THE CONTESTS AND POTDS
-# • A LEADERBOARD AND DASHBOARD TO INCREASE THE COMPETITION!
-# • A DASHBOARD FOR TRACKING YOUR PROGRESS WHILE PRACTICING ON PLATFORMS
-# • PROJECTS TO BE SHOWN AND FILTERED ACCORDING TO THEIR INTEREST AND LEVEL
-# • COLLABORATE, SUGGEST AND RATE IDEAS OF PEERS FOR FUTURE PROJECTS
+• It keeps track of the progress across various domains of programming and development.
+
+• Build a platform which tracks all the Upcoming  Contests and Hackathons
+
+• user will be notified of the contests and POTDs
+
+• A leaderboard and dashboard to increase competition!
+• A dashboard for tracking your progress while practising on platforms
+
+• projects to be shown and Filtered According to their interest and level
+
+• Collaborate, suggest and rate ideas of peers for future projects
