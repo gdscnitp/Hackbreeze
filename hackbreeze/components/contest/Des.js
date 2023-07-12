@@ -1,7 +1,7 @@
 import Main from "./Main";
 function ExpenseItem(props) {
   return (
-    <div>
+    <div className="w-full">
       <Main
         contest_name={props.contest_name}
         contest_des={props.contest_des}
