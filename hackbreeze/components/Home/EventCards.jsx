@@ -2,7 +2,7 @@ import React from "react";
 
 const EventCards = (props) => {
   return (
-    <div className="card bg-white w-[330px] h-[80px] rounded-md">
+    <div className="card bg-white rounded-md">
       <div className="flex">
         <div>
           <h6 className="card-title font-poppins text-black text-xs mt-1 ml-2 font-bold">
