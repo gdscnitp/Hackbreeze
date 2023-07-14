@@ -7,7 +7,16 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        "1/15": "6.6%",
+      },
+      colors: {
+        primary: "#FFEDED",
+        secondary: "#7B2869",
+        tertiary: "#C85C83",
+      },
+    },
   },
   plugins: [],
 };

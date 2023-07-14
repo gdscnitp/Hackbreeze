@@ -22,16 +22,16 @@ const UpcomingEvents = () => {
   ];
 
   return (
-    <div className="flex flex-col w-80 h-100">
-      <div className="flex bg-[#7B2869] rounded-tl-[30px] rounded-tr-[30px] h-[50px] w-[370px]">
-        <h2 className="font-poppins text-white  text-[20px] font-bold pl-[86px] py-[8px]">
+    <div className="flex flex-col mx-4">
+      <div className="flex bg-[#7B2869] px-2 py-4 justify-center rounded-t-3xl">
+        <h2 className="font-poppins text-white text-[20px] font-bold mr-2">
           Upcoming
         </h2>
-        <h2 className="font-poppins text-white text-[20px] font-bold px-[10px] py-[8px]">
+        <h2 className="font-poppins text-white text-[20px] font-bold">
           Events
         </h2>
       </div>
-      <div className=" pl-[20px] py-[9px] bg-[#FFEDED] rounded-bl-md rounded-br-md h-[310px] w-[370px] space-y-5 overflow-x-auto">
+      <div className="bg-primary rounded-bl-md rounded-br-md space-y-5 overflow-x-auto py-8 px-4">
         {data.map((el) => (
           <EventCards
             key={el.id}

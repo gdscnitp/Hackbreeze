@@ -1,35 +1,36 @@
 import React from "react";
 import classes from "./Navbar.module.css";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
     <nav className={classes.nav}>
-      <a href="#" className={classes.brand}>
-        {" "}
+      <Link href="/" className={classes.brand}>
         HackBreeze
-      </a>
+      </Link>
       <div className={classes.navigation_menu}>
         <ul>
-          <li className={classes.nav_item}>
-            <a href="#" className={classes.nav_link}>
+          <div className={classes.nav_item}>
+            <Link href="/events" className={classes.nav_link}>
               Events
-            </a>
+            </Link>
+          </div>
+
+          <li className={classes.nav_item}>
+            <Link href="/eventdata/eventdata" className={classes.nav_link}>
+              Event_1
+            </Link>
           </li>
           <li className={classes.nav_item}>
-            <a href="#" className={classes.nav_link}>
-              Compete
-            </a>
-          </li>
-          <li className={classes.nav_item}>
-            <a href="#" className={classes.nav_link}>
-              Friends
-            </a>
+            <Link href="/team" className={classes.nav_link}>
+              Team_1
+            </Link>
           </li>
           <div className={classes.vl}>
             <li className={classes.nav_item}>
-              <a href="#" className={classes.nav_link1}>
+              <Link href="/about" className={classes.nav_link1}>
                 Contact us
-              </a>
+              </Link>
             </li>
           </div>
         </ul>
