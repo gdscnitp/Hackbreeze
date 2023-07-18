@@ -1,14 +1,16 @@
 import connectDB from "../../../utils/db";
 import Project from "../../../models/Project";
+import Team from "../../../models/Team";
 
 export default async function handler(req, res) {
   await connectDB();
-
-  //ROute for read operation
+  //routes for projectIdeas model
+  //Route for read operation
   if (req.method === "GET") {
+    const { tid } = req.body;
     try {
-      const project = await Project.find();
-      res.status(200).json(project);
+      const { projects } = await Team.findById(tid).populate("projects");
+      res.status(200).json(projects);
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: "Server Error" });
@@ -16,25 +18,14 @@ export default async function handler(req, res) {
   }
   //Route for project create operation
   else if (req.method === "POST") {
-    const { description, tasks, madeBy, madeFor } = req.body;
+    const { description, tasks, madeBy } = req.body;
     try {
-      const newProject = new Project({
-        description,
-        tasks,
-        madeBy,
-        madeFor,
-      });
-
-      newProject
-        .save()
-        .then(() => {
-          res.status(201).json({ message: "Project created successfully" });
-        })
-        .catch(() => {
-          res
-            .status(500)
-            .json({ error: "An error occurred while creating the project" });
-        });
+      const newProject = new Project({ description, tasks, madeBy });
+      await newProject.save();
+      const team = await Team.findById(madeBy);
+      team.projects.push(newProject._id);
+      await team.save();
+      return res.status(201).json({ message: "Project created successfully" });
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: "Server Error" });
@@ -49,7 +40,6 @@ export default async function handler(req, res) {
         description,
         tasks,
         madeBy,
-        madeFor,
       })
         .then(() => {
           res.status(200).json({ message: "Project updated successfully" });

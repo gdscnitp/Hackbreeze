@@ -17,6 +17,9 @@ const ProjectSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Event",
   },
+  votes: {
+    type: Number,
+  },
 });
 
 const Project =

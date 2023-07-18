@@ -19,6 +19,12 @@ const TeamSchema = new mongoose.Schema({
       ref: "User",
     },
   ],
+  projects: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Project",
+    },
+  ],
 });
 
 const Team = mongoose.models?.Team || mongoose.model("Team", TeamSchema);
