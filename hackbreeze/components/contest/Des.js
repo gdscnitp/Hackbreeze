@@ -9,6 +9,7 @@ function ExpenseItem(props) {
         attendees={props.attendees}
         duration={props.duration}
         friends_att={props.friends_att}
+        cid={props.cid}
       />
     </div>
   );

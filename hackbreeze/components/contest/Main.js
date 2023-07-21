@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import classes from "./Main.module.css";
 
 function Main(props) {
@@ -6,6 +7,8 @@ function Main(props) {
   let day = props.date.toLocaleString("en-US", { day: "2-digit" });
   let hour = props.date.getHours().toString().padStart(2, "0");
   let minute = props.date.getMinutes().toString().padStart(2, "0");
+  const eid = props.cid;
+  const router = useRouter();
 
   return (
     <div className={classes.main}>
@@ -44,6 +47,10 @@ function Main(props) {
           <span>{props.attendees}</span>
         </div>
       </div>
+
+      <button className="" onClick={() => router.push(`/events/${eid}`)}>
+        Visit
+      </button>
     </div>
   );
 }

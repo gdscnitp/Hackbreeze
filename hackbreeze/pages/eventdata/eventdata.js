@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 
-export default function Home() {
+export default function Home({ title, description, orgname = "Orgainzer" }) {
   const slides = [
     {
       url: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
@@ -48,14 +48,14 @@ export default function Home() {
         <div className="h-screen bg-white-200 p-16 flex flex-col md:flex-row w-full">
           <div className="flex flex-col w-1/2">
             <div className="">
-              <h1 className="font-bold text-center text-4xl m-6">EVENT NAME</h1>
+              <h1 className="font-bold text-center text-4xl m-6">{title}</h1>
             </div>
             <div className="bg-pink-100 flex-1 text-white text-center overflow-hidden text-5xl m-3 py-4  rounded-lg ">
               <div className="flex flex-row">
                 <div className="pl-6">
                   <h1 className="font-bold text-black text-xl">
                     Organizer:
-                    <span className="text-xl font-normal">Lorem</span>
+                    <span className="text-xl font-normal">{orgname}</span>
                   </h1>
                 </div>
 
@@ -67,13 +67,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <p className="text-black text-lg m-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Blanditiis, animi! Lorem ipsum dolor sit amet consectetur,
-                adipisicing elit. Voluptatum maiores, quae veniam officia
-                blanditiis nihil ex saepe beatae mollitia ratione laudantium quo
-                nulla?
-              </p>
+              <p className="text-black text-lg m-4">{description}</p>
             </div>
             <div className="  pl-72 p-12">
               <button className="text-white bg-violet-400 w-20  rounded-lg text-center">

@@ -1,5 +1,10 @@
 import mongoose from "mongoose";
 
+const msgSchema = new mongoose.Schema({
+  sender: String,
+  text: String,
+});
+
 const TeamSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -25,6 +30,11 @@ const TeamSchema = new mongoose.Schema({
       ref: "Project",
     },
   ],
+  event: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Project",
+  },
+  messages: [msgSchema],
 });
 
 const Team = mongoose.models?.Team || mongoose.model("Team", TeamSchema);

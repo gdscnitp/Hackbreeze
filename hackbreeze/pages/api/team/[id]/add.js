@@ -1,13 +1,13 @@
-import Team from "../../../models/Team";
-import User from "../../../models/User";
-import connectDB from "../../../utils/db";
+import Team from "../../../../models/Team";
+import User from "../../../../models/User";
+import connectDB from "../../../../utils/db";
 
 const handler = async (req, res) => {
-  //   const { id } = req.query;
-  const { fid, uid, id } = req.body;
+  const { id } = req.query;
+  const { uid } = req.body;
   await connectDB();
   const team = await Team.findById(id);
-  team.members.push(fid);
+  team.members.push(uid);
   await team.save();
   const user = await User.findById(uid);
   user.teams.push(team._id);

@@ -3,8 +3,12 @@ import Friends from "../components/Home/Friends";
 import UpcomingEvents from "../components/Home/UpcomingEvents";
 import Search from "../components/Home/Search";
 import LeaderBoard from "../components/Home/LeaderBoard";
+import { useEvents, useFriends } from "../hooks/queries";
 
 const HomePage = () => {
+  const { data: events, isLoading, isError, error } = useEvents();
+  const { data: friends } = useFriends();
+
   return (
     <div className="bg-white w-full flex flex-col items-center pt-14 pb-4">
       <div className="flex">
@@ -29,12 +33,12 @@ const HomePage = () => {
           </p>
         </div>
         <div className="mx-2">
-          <Friends />
+          <Friends friends={friends} />
         </div>
       </div>
       <div className="flex w-full items-center justify-center">
         <div className="max-w-md">
-          <UpcomingEvents />
+          <UpcomingEvents data={events} />
         </div>
         <div className="flex mx-4">
           <Search />
