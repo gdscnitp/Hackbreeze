@@ -1,7 +1,11 @@
 import { Field, Form, Formik } from "formik";
 import React from "react";
+import { useEventMutations } from "../../hooks/mutations";
+import { useRouter } from "next/router";
 
 const EventForm = () => {
+  const { createEvent } = useEventMutations();
+  const router = useRouter();
   return (
     <div className="px-4 py-12 flex flex-col justify-center items-center">
       <div className="p-12 shadow-lg rounded-lg">
@@ -11,7 +15,10 @@ const EventForm = () => {
 
         <Formik
           initialValues={{ title: "", description: "", start: "", end: "" }}
-          onSubmit={(values) => {}}
+          onSubmit={(values) => {
+            createEvent.mutate(values);
+            router.push("/events");
+          }}
         >
           <Form className="flex flex-col justify-center items-center">
             <Field

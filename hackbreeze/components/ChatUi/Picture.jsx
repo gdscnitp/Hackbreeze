@@ -7,6 +7,6 @@ const Picture = () => {
         </h2>
       </div>
     </div>
-  )
-}
-export default Picture
+  );
+};
+export default Picture;
